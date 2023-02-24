@@ -1,0 +1,288 @@
+@mixin flexible ($dis, $direction, $corte, $just, $aling){
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content: $just;
+    align-items: $aling;
+}
+
+$fuentes: (
+    "principal": 'Abril Fatface',
+    "secundaria": 'Lato',
+);
+$colors: (
+    "violet-dark": #44025C,
+    "violet": #B505F5,
+    "violet-ligth": #963AB7,
+    "brown-dark": rgb(15,13,13),
+    "white": white,
+);
+
+body{
+    background-color: map-get($colors, "brown-dark");
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header{
+    width: 100%;
+    min-height: 1.5em; /*Para poner el footer debajo*/
+
+    &__nav{
+        @include flexible(flex, row, nowrap, center, space-between);
+    }
+        &__ul{
+            @include flexible(flex, row, nowrap, center, center);
+
+        }
+            &__li{
+                padding: 0.3em 0.5em;
+                color: map-get($colors, "violet");
+                
+                font-size: 1.2em;
+                white-space: nowrap;
+
+                transition: all 0.3s ease-out;
+            }
+            &__li:hover{
+                transform: scale(1.1);
+                border-bottom: 2px solid map-get($colors, "violet-dark");
+            }
+            &__li--icon:hover{
+                border: none;
+            }    
+             &__link{}  
+    &__ul--svg{
+        margin-left: 2vw
+    }     
+   
+
+    &__svg{
+        @include flexible(flex, row, nowrap, center, center);
+        margin: 0.5em;
+        width: 2.5rem;
+        min-height: 1.7rem;
+
+        border-radius: 50%;
+        padding: 0.3em;
+
+        background-color: map-get($colors, "white");
+
+        overflow: hidden;
+    }
+    &__img--icon{
+        width: 100%;
+        overflow: hidden;
+    }
+    &__title{
+        margin: 27vh 10%;
+        padding: 5%;
+
+
+        font-size: 5em;
+        line-height: 1;
+        font-family: map-get($fuentes, "principal");
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__cat{
+        position: relative;
+
+        max-width: 24rem;
+        max-height: 24rem;
+        @include flexible(flex, column, nowrap, center, center);
+
+        margin-top: 20vh;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+
+        background-color: map-get($colors, "brown-dark");
+        border: 1rem solid rgb(26, 23, 23);
+
+    }
+    .tip{
+        position: absolute;
+        z-index: -1;
+        width: 35%;
+        min-height: 30%;
+
+        background-color: map-get($colors, "black-ligth");
+
+        border-radius: 50%;
+        border: 1rem solid rgb(26, 23, 23);
+    }
+    .nariz{
+        position: absolute;
+        z-index: 1;
+        width: 15%;
+        min-height: 10%;
+
+        background-color: rgb(26, 23, 23);
+    }
+    .oreja-1{
+        left: 0;
+        top: -5%;
+
+        transform: rotate(-25deg);
+    }
+    .oreja-2{
+        right: 0;
+        top: -5%;
+
+        transform: rotate(25deg);
+    }
+     
+    &__letter-color{
+         color: map-get($colors, "violet-ligth");
+    }
+
+    &__animation{
+        margin-left: auto;
+        margin-right: auto;
+
+        width: fit-content;
+        padding: 0.2em 0;
+        position: relative;
+    }
+    &__animation::after{
+       content: "";
+       width: 0%;
+       min-height: 0.07em;
+
+       position: absolute;
+       z-index: 2;
+       left: 0;
+       bottom: 0;
+
+       background-color: map-get($colors, "white");
+
+       transition: all 0.5s ease-out;
+    }
+    &__title:hover &__animation::after{
+        width: 100%;
+    }
+} 
+.section{
+    min-height: 90vh;
+    margin: 25vh 0;
+    padding: 2em;
+
+    @include flexible(flex, column, nowrap, center, center);
+
+    &__h2{
+        margin-bottom: 1.3em;
+
+        color: map-get($colors, "violet");
+
+        font-size: 2.3em;
+        font-weight: 600;
+        font-family: map-get($fuentes, "principal");
+    }
+    &__div{
+        max-width: 80%;
+    }
+        &__h3{
+            margin-bottom: 0.2rem;
+
+            color: map-get($colors, "violet-ligth");
+
+            font-size: 1.7em;
+            font-family: map-get($fuentes, "secundaria");
+        }
+        &__p{
+            margin-bottom: 2em;
+
+            font-size: 1.2em;
+            font-family: map-get($fuentes, "secundaria");
+        }
+}
+.grid{
+    width: 90%;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+
+
+    &__article{
+        position: relative;
+        min-height: 8em;
+        @include flexible(flex, column, nowrap, center, center);
+
+        transition: all 0.2s ease-in-out;
+
+        cursor: pointer;
+
+    }
+        &__h4{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 50%;
+
+            background-color: rgba($color: #000000, $alpha: .4);
+
+            font-family: map-get($fuentes, "principal");
+
+            @include flexible(flex, column, nowrap, center, center);
+
+            transition: all 0.2s ease-in-out;
+            
+        }
+        &__article:hover{
+            border: 4px solid map-get($colors, "violet-dark");
+        }
+        &__article:hover &__h4{
+            background-color: rgba($color: #000000, $alpha: 0);
+        }
+        &__img{
+            width: 100%;
+        }
+        &__link{}
+}
+.footer{
+    width: 100%;
+    margin-top: auto;
+    &__h3{
+        margin: 0 2%;
+        padding: 1em 1.5em;
+
+        color: map-get($colors, "violet");
+
+        font-size: 1.5em;
+
+        border-top: 1px solid map-get($colors, "violet");
+
+    }
+    &__ul{
+        margin: 0 10%;
+        margin-bottom: 1.2em;
+        padding: 0.2em;
+
+        @include flexible(column, row, nowrap, center, space-between);
+    }
+        &__li{
+            position: relative;
+
+            padding: 0.2em 1em;
+        }
+        &__li::after{
+            content: "";
+            position: absolute;
+            left: -1%;
+            top: 30%;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-left: 1rem solid white;
+        }
+        &__link{
+            width: fit-content;
+        }
+        
+        
+}
+

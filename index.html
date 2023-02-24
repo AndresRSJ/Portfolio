@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Tipografías-->
+    <!--Abril fatface-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">  
+    <!--Lato-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--JS-->
+    <script defer src="js/main.js"></script>
+    
+    <title>Portfolio de Andres</title>
+</head>
+<body>
+    <header class="header" id="inicio">
+        <nav class="header__nav">
+            <ul class="header__ul header__ul--menu">
+                <li class="header__li"><a href="#inicio" title="Inicio" class="header__link">Inicio</a></li>
+                <li class="header__li"><a href="#sobre-mi" title="Sobre mi" class="header__link">Sobre mí</a></li>
+                <li class="header__li"><a href="#proyectos" title="Proyectos" class="header__link">Proyectos</a></li>
+                <li class="header__li"><a href="#contacto" title="Contacto" class="header__link">Contácto</a></li>
+            </ul>
+            <ul class="header__ul header__ul--svg">
+                <li class="header__li header__li--icon">   
+                    <a href="https://github.com/AndresRSJ" title="Github" target="_blank" class="header__svg"><img class="hader__img--icon" src="assets/icons/github.svg" alt=""></a>
+                </li>
+                <li class="header__li header__li--icon">
+                    <a href="https://www.linkedin.com/in/andres-retamar-03bb2a262/" title="Linkedin" 
+                    target="_blank"  class="header__svg"><img class="hader__img--icon"  src="assets/icons/linkedin.svg" alt=""></a>
+                </li>      
+            </ul>
+        </nav>
+
+        <div class="header__cat">
+            <div class="tip nariz"></div>
+            <div class="tip oreja-1"></div>
+            <div class="tip oreja-2"></div>
+            <h1 class="header__title">
+                <div class="header__animation">
+                    <span class="header__letter-color">Front</span>end
+                </div> 
+                <div class="header__animation">
+                    <span class="header__letter-color">Dev</span>eloper
+                </div>
+            </h1>
+        </div>
+
+    </header>
+
+<main class="main">
+    <section class="section" id="sobre-mi">
+        <h2 class="section__h2"  data-aos="fade-right">Sobre mí</h2>
+        <div class="section__div">
+            <h3 class="section__h3">Me llamo Andrés Retamar</h3>
+            <p class="section__p">Tengo 20 años y soy de Argentina. Me desenvuelvo como Frontend Developer y pongo toda mi pasión en ello. Busco trabajar en un lugar donde pueda aplicar mis conocimientos y también aprender de otros personas para seguir creciendo como programador.</p>
+        </div>
+    </section>
+    
+    <section class="section" id="proyectos">
+        <h2 class="section__h2">Proyectos</h2>
+        <p class="section__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam autem, enim culpa voluptatem deleniti.</p>
+        <div class="grid">
+            <article class="grid__article">
+                <a href="#" title="work1" class="grid__link"><img src="assets/img/blue_1280.png" alt="imagen" class="grid__img"></a>
+                <h4 class="grid__h4">Nombre proyecto</h4>
+            </article>
+            <article class="grid__article">
+                <a href="#" title="work1" class="grid__link"><img src="assets/img/man-g12964e3d0_1280.png" alt="imagen" class="grid__img"></a>
+                <h4 class="grid__h4">Nombre proyecto</h4>
+            </article>
+            <article class="grid__article">
+                <a href="#" title="work1" class="grid__link"><img src="assets/img/man-g3f72bba09_1280.png" alt="imagen" class="grid__img"></a>
+                <h4 class="grid__h4">Nombre proyecto</h4>
+            </article>
+            <article class="grid__article">
+                <a href="#" title="work1" class="grid__link"><img src="assets/img/mountain-g42dc39261_1280.png" alt="imagen" class="grid__img"></a>
+                <h4 class="grid__h4">Nombre proyecto</h4>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="contacto">
+    <h3 class="footer__h3">Contactos</h3>
+         <ul class="footer__ul">
+           <li class="footer__li"><a href="#" title="Email" class="footer__link">Email</a></li>
+           <li class="footer__li"><a href="#" title="linkedin" class="footer__link">Linkedin</a></li>
+           <li class="footer__li"><a href="#" title="github" class="footer__link">Github</a></li>
+         </ul>
+</footer>
+    
+</body>
+</html>
